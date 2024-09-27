@@ -34,7 +34,55 @@ Add in Visual Studio with the Nuget tool the package **MudBlazor**
 
 ![image](https://github.com/user-attachments/assets/329b2d26-fc43-4c94-80cc-af5ebdf540b5)
 
+## 3. Modify the _Imports.razor
 
+Add this new line:
 
+```
+@using MudBlazor
+```
 
-## 3. 
+# 4. Add the following references in the App.razor component
+
+Add these **styles** files in the head section:
+
+```
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+<link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
+```
+
+Add the script reference in the body section:
+
+```
+<script src="_content/MudBlazor/MudBlazor.min.js"></script>
+```
+
+This is the modified App.razor file:
+
+```
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/" />
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="BlazorApp1.styles.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
+    <HeadOutlet @rendermode="InteractiveServer" />
+</head>
+
+<body>
+    <Routes @rendermode="InteractiveServer" />
+    <script src="_framework/blazor.web.js"></script>
+    <script src="_content/MudBlazor/MudBlazor.min.js"></script>
+</body>
+
+</html>
+```
+
+# 5. 
