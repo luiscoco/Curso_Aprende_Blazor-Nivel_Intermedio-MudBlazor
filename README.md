@@ -249,7 +249,7 @@ See also in the following picture the NavMenu.razor component whole code:
 
 ![image](https://github.com/user-attachments/assets/9536df06-95d0-4d03-b3dd-a463cbb3bd1f)
 
-## 10. How to add MudLayout
+## 10. How to add MudLayout and App bar
 
 Now we can modify the **MainLayout.razor** component and add the **MudLayout** component with a top App bar
 
@@ -272,6 +272,8 @@ Now we can modify the **MainLayout.razor** component and add the **MudLayout** c
 This is the result when we run the application:
 
 ![image](https://github.com/user-attachments/assets/c171d890-84c3-4b43-9657-508d31320b6a)
+
+## 11. Add a Left Hand Side Menu (MudDrawer)
 
 Also we can add a left hand side menu with the **MudDrawer** component:
 
@@ -300,7 +302,18 @@ Also we can add a left hand side menu with the **MudDrawer** component:
 }
 ```
 
-We also have to modify the **NavMenu.razor** component
+We also have to modify the **NavMenu.razor** component and add the following code:
+
+**NavMenu.razor**
+
+```razor
+<MudNavMenu>
+    <MudNavLink href="/" Match="NavLinkMatch.All">Home</MudNavLink>
+    <MudNavLink href="/Counter" Match="NavLinkMatch.Prefix">Counter</MudNavLink>
+    <MudNavLink href="/Weather" Match="NavLinkMatch.Prefix">Weather</MudNavLink>
+    <MudNavLink href="/mudblazorcomponents" Match="NavLinkMatch.Prefix">MudBlazorComponents</MudNavLink>
+</MudNavMenu>
+```
 
 See the application running
 
@@ -311,5 +324,66 @@ See the application running
 ![image](https://github.com/user-attachments/assets/79a7d7c7-e4f2-47e0-b103-1c5b70b58eb1)
 
 ![image](https://github.com/user-attachments/assets/42d02e63-8159-4ecd-98bd-e209f4029f7c)
+
+# 12. We can also add a button to expand or collapse the MudDrawer menu
+
+Add the following code in the layout for creating the button
+
+```
+<MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="DrawerToggle"></MudIconButton>
+```
+
+We also define the **DrawerToggle** function:
+
+```
+@code {
+    
+    bool _drawerOpen = true;
+
+    void DrawerToggle()
+    {
+        _drawerOpen = !_drawerOpen;
+    }
+}
+```
+
+This is the final **MainLayout.razor** component code:
+
+```
+@inherits LayoutComponentBase
+
+<MudThemeProvider />
+<MudPopoverProvider />
+
+<MudLayout>
+    <MudAppBar>
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="DrawerToggle"></MudIconButton>
+        MudBlazor App
+    </MudAppBar>
+    <MudDrawer @bind-Open="@_drawerOpen">
+        <NavMenu />
+    </MudDrawer>
+    <MudMainContent>
+        @Body
+    </MudMainContent>
+</MudLayout>
+
+@code {
+    
+    bool _drawerOpen = true;
+
+    void DrawerToggle()
+    {
+        _drawerOpen = !_drawerOpen;
+    }
+}
+```
+
+Run the application and see the result:
+
+![image](https://github.com/user-attachments/assets/351dc629-64fc-4fd1-b3ca-ed3fa489114b)
+
+![image](https://github.com/user-attachments/assets/22d8bd56-8d58-4613-8e17-0d0308292575)
+
 
 
