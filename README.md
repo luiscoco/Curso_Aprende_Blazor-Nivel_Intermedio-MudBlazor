@@ -187,7 +187,58 @@ This is the App.razor file including the MudBlazor components:
 </div>
 ```
 
-## 7. Run the Application and see the results
+## 7. Add a new razor component for testing the MudBlazor components
+
+We right click on the Pages folder and then we select the menu option Add New Razor Component and we set the new component name: MudBlazorComponent.razor
+
+![image](https://github.com/user-attachments/assets/9cb5d6c9-d16d-4507-9010-54679d072f6e)
+
+This is the new component code:
+
+```razor
+@page "/mudblazorcomponents"
+
+<PageTitle>MudBlazorComponents</PageTitle>
+
+<h1>MudBlazor Components</h1>
+
+<MudGrid>
+    <MudItem xs="12">
+        <MudAlert Severity="Severity.Normal">The reactor type is RBMK-1000</MudAlert>
+    </MudItem>
+    <MudItem xs="12">
+        <MudAlert Severity="Severity.Info">The reactor was fired up successfully</MudAlert>
+    </MudItem>
+    <MudItem xs="12">
+        <MudAlert Severity="Severity.Success">The reactor is running at optimum temperature</MudAlert>
+    </MudItem>
+    <MudItem xs="12">
+        <MudAlert Severity="Severity.Warning">The reactor temperature exceeds the optimal range</MudAlert>
+    </MudItem>
+    <MudItem xs="12">
+        <MudAlert Severity="Severity.Error">Meltdown is imminent</MudAlert>
+    </MudItem>
+</MudGrid>
+```
+
+## 8 . Add a new menu item in the NavMenu.razor component for navigating to the 
+
+This is the new NavLink code:
+
+```
+<div class="nav-item px-3">
+     <NavLink class="nav-link" href="mudblazorcomponents">
+         <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> MudBlazorComponents
+     </NavLink>
+ </div>
+```
+
+See also in the following picture the NavMenu.razor component whole code:
+
+![image](https://github.com/user-attachments/assets/24ea633b-e0a4-4d65-891c-e77da772cb5c)
+
+
+## 9. Run the Application and see the results
 
 ![image](https://github.com/user-attachments/assets/9536df06-95d0-4d03-b3dd-a463cbb3bd1f)
 
