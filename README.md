@@ -245,10 +245,71 @@ See also in the following picture the NavMenu.razor component whole code:
 
 ![image](https://github.com/user-attachments/assets/24ea633b-e0a4-4d65-891c-e77da772cb5c)
 
-
 ## 9. Run the Application and see the results
 
 ![image](https://github.com/user-attachments/assets/9536df06-95d0-4d03-b3dd-a463cbb3bd1f)
 
+## 10. How to add MudLayout
+
+Now we can modify the **MainLayout.razor** component and add the **MudLayout** component with a top App bar
+
+```
+@inherits LayoutComponentBase
+
+<MudThemeProvider />
+<MudPopoverProvider />
+
+<MudLayout>
+    <MudAppBar>
+        MudBlazor App
+    </MudAppBar>
+    <MudMainContent>
+        @Body
+    </MudMainContent>
+</MudLayout>
+```
+
+This is the result when we run the application:
+
+![image](https://github.com/user-attachments/assets/c171d890-84c3-4b43-9657-508d31320b6a)
+
+Also we can add a left hand side menu with the **MudDrawer** component:
+
+**MainLayout.razor**
+
+```
+@inherits LayoutComponentBase
+
+<MudThemeProvider />
+<MudPopoverProvider />
+
+<MudLayout>
+    <MudAppBar>
+        MudBlazor App
+    </MudAppBar>
+    <MudDrawer @bind-Open="@_drawerOpen">
+        <NavMenu />
+    </MudDrawer>
+    <MudMainContent>
+        @Body
+    </MudMainContent>
+</MudLayout>
+
+@code {
+    bool _drawerOpen = true;
+}
+```
+
+We also have to modify the **NavMenu.razor** component
+
+See the application running
+
+![image](https://github.com/user-attachments/assets/6bd441fe-1eda-46ce-a0af-4d321d04270f)
+
+![image](https://github.com/user-attachments/assets/afe33f97-b02f-4360-adeb-d3b5d763c96e)
+
+![image](https://github.com/user-attachments/assets/79a7d7c7-e4f2-47e0-b103-1c5b70b58eb1)
+
+![image](https://github.com/user-attachments/assets/42d02e63-8159-4ecd-98bd-e209f4029f7c)
 
 
