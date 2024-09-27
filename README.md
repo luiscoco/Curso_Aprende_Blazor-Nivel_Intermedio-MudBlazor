@@ -145,14 +145,14 @@ Add these new components in the MainLayout.razor. They are always required:
 The following components are not mandatory are optiona:
 
 ```
-@* Needed for dialogs *@
+@*Needed for dialogs*@
 <MudDialogProvider />
 ```
 
 and
 
 ```
-@* Needed for snackbars *@
+@*Needed for snackbars*@
 <MudSnackbarProvider />
 ```
 
@@ -187,6 +187,9 @@ This is the App.razor file including the MudBlazor components:
 </div>
 ```
 
-## 7. 
+## 7. Run the Application and see the results
+
+![image](https://github.com/user-attachments/assets/9536df06-95d0-4d03-b3dd-a463cbb3bd1f)
+
 
 
