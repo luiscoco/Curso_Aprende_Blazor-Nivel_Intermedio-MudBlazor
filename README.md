@@ -135,11 +135,25 @@ app.Run();
 
 ## 6. Modify the MainLayout.razor
 
-Add these new components in the MainLayout.razor:
+Add these new components in the MainLayout.razor. They are always required:
 
 ```
 <MudThemeProvider />
 <MudPopoverProvider />
+```
+
+The following components are not mandatory are optiona:
+
+```
+@* Needed for dialogs *@
+<MudDialogProvider />
+```
+
+and
+
+```
+@* Needed for snackbars *@
+<MudSnackbarProvider />
 ```
 
 This is the App.razor file including the MudBlazor components:
@@ -172,3 +186,7 @@ This is the App.razor file including the MudBlazor components:
     <a class="dismiss">🗙</a>
 </div>
 ```
+
+## 7. 
+
+
