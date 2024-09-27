@@ -187,7 +187,9 @@ This is the App.razor file including the MudBlazor components:
 </div>
 ```
 
-## 7. Add a new razor component for testing the MudBlazor components
+## 7. Add a new razor component (Alert) for testing the MudBlazor components
+
+Note for more info about the MudBlazor Alert component visit this URL: https://mudblazor.com/components/alert
 
 We right click on the Pages folder and then we select the menu option Add New Razor Component and we set the new component name: MudBlazorComponent.razor
 
