@@ -59,7 +59,7 @@ Add the script reference in the body section:
 
 This is the modified App.razor file:
 
-```
+```razor
 ﻿<!DOCTYPE html>
 <html lang="en">
 
