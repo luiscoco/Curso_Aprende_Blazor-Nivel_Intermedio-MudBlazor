@@ -6,6 +6,8 @@ https://mudblazor.com/
 
 https://mudblazor.com/getting-started/installation
 
+![image](https://github.com/user-attachments/assets/1ef2b608-94e4-40a9-8183-2497e86e152a)
+
 ## 1. Create a new Blazor Web App with Visual Studio 2022 Community Edition 
 
 Run Visual Studio and create a new project
