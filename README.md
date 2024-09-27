@@ -189,8 +189,6 @@ This is the App.razor file including the MudBlazor components:
 
 ## 7. Add a new razor component (Alert) for testing the MudBlazor components
 
-Note for more info about the MudBlazor Alert component visit this URL: https://mudblazor.com/components/alert
-
 We right click on the Pages folder and then we select the menu option Add New Razor Component and we set the new component name: MudBlazorComponent.razor
 
 ![image](https://github.com/user-attachments/assets/9cb5d6c9-d16d-4507-9010-54679d072f6e)
@@ -222,6 +220,12 @@ This is the new component code:
     </MudItem>
 </MudGrid>
 ```
+
+**Note**: for more info about the MudBlazor Alert component visit this URL: https://mudblazor.com/components/alert
+
+An alert is used to display an important message which is statically embedded in the page content.
+
+![image](https://github.com/user-attachments/assets/2c48241d-af6c-49ee-bf13-69e7c39dd504)
 
 ## 8 . Add a new menu item in the NavMenu.razor component for navigating to the 
 
